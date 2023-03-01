@@ -15,8 +15,8 @@ import (
 
 // 老版本的数组解析只支持一维，且格式为 aaa,bbb,ccc
 // 当前版本引入多维数组，格式变更为：
-// [1,2,3]        1,2,3    !strings.contains("[") strings.split(",")
-// [[1,2],[3,4]]   [1,2],[3,4]   strings.contains("[") 以 ],[为分割符 index%2 == 1 加 ] , index%2==0 加 [
+// [1,2,3]
+// [[1,2],[3,4]]   [1,2],[3,4]
 // [[[[1,2],[11,22]],[3,4]]]
 func fmtToBlock(originVal string) string {
 	if !hasBlock(originVal) {
