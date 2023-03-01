@@ -254,6 +254,13 @@ func TestAbiParam_Parse(t *testing.T) {
 			want:       bytesVal,
 		},
 		{
+			name:       "normal: slice bytes",
+			blob:       "bytes[]",
+			value:      "[0x9e99847ecf80af04f0808e017172bc71b71a5d1bb7b82ab1ce4b2ec666f009425419ad6e1d42c27f0d8408976e20276e5fd2411c6dc42d06d885b4c25d71fbb31c,0x9e99847ecf80af04f0808e017172bc71b71a5d1bb7b82ab1ce4b2ec666f009425419ad6e1d42c27f0d8408976e20276e5fd2411c6dc42d06d885b4c25d71fbb31c]",
+			goArgument: "[][]uint8",
+			want:       [][]uint8{bytesVal, bytesVal},
+		},
+		{
 			name:       "normal: bytes32",
 			blob:       "bytes32",
 			value:      "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
